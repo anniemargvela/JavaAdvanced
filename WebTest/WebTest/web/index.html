@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="txtName2"></span><br/>
+<input id="txtName"/>
+<button onclick="sendData()">Say Hello</button>
+<script> var xhttp = new XMLHttpRequest();
+var sendData = function(){
+    xhttp.addEventListener('load', function()
+    {
+        document.getElementById('txtName2').innerHTML = this.response.toString();
+       // alert(this.response)
+    });
+    xhttp.open("POST", "server" , true);
+    xhttp.send(document.getElementById('txtName').value);
+}
+ </script>
+</body>
+</html>
